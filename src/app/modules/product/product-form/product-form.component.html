@@ -1,0 +1,28 @@
+<p>product-form works!</p>
+
+<h1 *ngIf="this.id !== 'new'">Edit Product</h1>
+<h1 *ngIf="this.id === 'new'">Create New Product</h1>
+
+<form *ngIf="this.productForm" (submit)="this.onSubmit()"  [formGroup]="this.productForm" >
+
+    <div class="">
+        <input formControlName="name" type="text" >
+
+    </div>
+    <div class="">
+        <textarea formControlName="description" id="" cols="30" rows="10"></textarea>
+
+    </div>
+    <div class="">
+
+        <input formControlName="price" type="text" >
+    </div>
+
+    <div class="">
+        <input type="file" class="custom-file-input form-control" id="files" name="files" multipls  accept="image/x-png,image/jpeg">
+    </div>
+
+    <div class="">
+        <button>Submit</button>
+    </div>
+</form>
